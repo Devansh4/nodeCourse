@@ -2,4 +2,4 @@ function sayHello(name)
 {
     console.log("Hello "+name);
 }
-sayHello("Devansh");
+setTimeout(sayHello,3000,"Devansh");
