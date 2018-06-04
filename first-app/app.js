@@ -1,3 +1,3 @@
-const logger = require('./logger');  //const to avoid overwriting
-logger.log('message');
-logger = "Dv";
+const path = require('path');
+let p = path.parse(__filename);
+console.log(p);
