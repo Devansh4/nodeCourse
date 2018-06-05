@@ -1,12 +1,25 @@
-const EventEmitter = require('events');
-//const emitter = new EventEmitter();    // this is not needed as we will use object of the extending class in logger
+const http = require('http');
 
-const Logger = require("./logger");
-const logger = new Logger();    //object of the class
+/*const server = http.createServer(); //this server is an event emitter, as http.server is derived from net.server which itself is an event emitter
 
-//Register a listener
-logger.on('myEvent', (args)=>{
-    console.log("Listener Called", args);
+//to handle the event connection raised
+server.on('connection', (socket)=>{
+    console.log("New connection established");
+});*/
+
+const server = http.createServer((req,res)=>
+{
+    if(req.url == "/")
+    {
+        res.write("Hello World");
+        res.end();
+    }
+    if(req.url == "/api/courses")
+    {
+        res.write(JSON.stringify([1, 2, 3]));
+        res.end();
+    }
 });
 
-logger.log("DC");
+server.listen(3000);
+console.log("Listening on port 3000...");
