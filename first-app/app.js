@@ -1,12 +1,10 @@
-const fs = require('fs');
+const EventEmitter = require('events');
+const emitter = new EventEmitter();
 
-/*let a = fs.readdirSync('./');
-console.log(a);*/
-
-let b = fs.readdir('./',function(err, result)   //every asynchronous method has a callback function, this one has the parameters error and result, out of which one is null
-{
-    if(err)
-        console.log(`Error: ${b}`);
-    else
-        console.log(result);
+//Register a listener
+emitter.on('myEvent', ()=>{
+    console.log("Listener Called");
 });
+
+//Raise an event
+emitter.emit('myEvent');
