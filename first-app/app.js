@@ -1,10 +1,12 @@
 const EventEmitter = require('events');
-const emitter = new EventEmitter();
+//const emitter = new EventEmitter();    // this is not needed as we will use object of the extending class in logger
+
+const Logger = require("./logger");
+const logger = new Logger();    //object of the class
 
 //Register a listener
-emitter.on('myEvent', (args)=>{
+logger.on('myEvent', (args)=>{
     console.log("Listener Called", args);
 });
 
-//Raise an event
-emitter.emit('myEvent',{id:1, url:"https://"}); //event arguments
+logger.log("DC");
