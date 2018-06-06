@@ -29,3 +29,7 @@ ncu -u to update package.json
 5.
 Lec35
 npm i jshint --save-dev to save it as a developer dependency. These are dependencies only used for development, like testing, and should not go into production environment as thay are not used for running the application.
+
+6.
+Lec36
+npm un mongoose to uninstall the mongoose package
