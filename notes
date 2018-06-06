@@ -41,4 +41,7 @@ npm -g outdated to see all the outdated folders
 8.
 Lec38
 npm init --yes to make package.json with all default values
-
+npm login
+npm publish
+npm i lion-lib-4
+can use that package now by require

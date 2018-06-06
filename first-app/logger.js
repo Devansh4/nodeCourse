@@ -4,7 +4,7 @@ const EventEmitter = require('events');
 
 var x = "http://myWebSite/log";
 
-class Logger extends EventEmitter
+class Logger extends EventEmitter   //all methods of event module will also be a part of this class
 {
     log(message){
     console.log(message);
