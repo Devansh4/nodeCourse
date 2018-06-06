@@ -14,3 +14,18 @@ npm list --depth=0 to see just the dependencies of our application
 Lec32
 npm view mongoose dependencies to view all dependencies of mongoose instead of viewing its package.json
 npm view mongoose versions to view all its versions
+
+4.
+Lec33
+npm i mongoose@2.4.2 to install the specific version
+
+4.
+Lec34
+npm outdated to see all current and latest versions
+npm update to update all the versions
+npm-check-updates
+ncu -u to update package.json
+
+5.
+Lec35
+npm i jshint --save-dev to save it as a developer dependency. These are dependencies only used for development, like testing, and should not go into production environment as thay are not used for running the application.
