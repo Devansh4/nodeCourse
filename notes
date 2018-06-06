@@ -45,3 +45,7 @@ npm login
 npm publish
 npm i lion-lib-4
 can use that package now by require
+
+9. 
+npm version major(or minor or patch) to update the version number in lion-lib-4
+npm publish
