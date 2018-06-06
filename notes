@@ -33,3 +33,12 @@ npm i jshint --save-dev to save it as a developer dependency. These are dependen
 6.
 Lec36
 npm un mongoose to uninstall the mongoose package
+
+7.
+Lec37
+npm -g outdated to see all the outdated folders
+
+8.
+Lec38
+npm init --yes to make package.json with all default values
+
