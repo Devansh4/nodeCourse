@@ -1,0 +1,8 @@
+1.
+Lec30
+Semantic Versioning: Major update.Minor Update.Patch
+^4.13.6 = Carat character. npm i will install any version with same major verion or 4.x
+~1.8.3 - Tilde character. npm i will install version 1.8.x
+If none of the above character, the exact version will get installed.
+
+2.
