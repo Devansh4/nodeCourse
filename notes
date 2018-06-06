@@ -6,3 +6,11 @@ Semantic Versioning: Major update.Minor Update.Patch
 If none of the above character, the exact version will get installed.
 
 2.
+Lec31
+npm list to see al the dependencies and their exact versions
+npm list --depth=0 to see just the dependencies of our application
+
+3.
+Lec32
+npm view mongoose dependencies to view all dependencies of mongoose instead of viewing its package.json
+npm view mongoose versions to view all its versions
