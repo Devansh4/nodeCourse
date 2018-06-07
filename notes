@@ -1,3 +1,8 @@
+0.
+Lec29
+.gitignore to exclude node_modules/
+npm i to install all node_modules from root folder
+
 1.
 Lec30
 Semantic Versioning: Major update.Minor Update.Patch
