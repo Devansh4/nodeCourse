@@ -59,3 +59,11 @@ HTTP methods:   Create - POST
                 Update - PUT
                 Delete - DELETE
                 
+11.
+Lec45
+sudo npm i -g nodemon to install node monitor
+
+12.
+Lec46
+Set environment variables by executing the the export command
+export port=5000
