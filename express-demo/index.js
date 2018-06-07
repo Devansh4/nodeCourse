@@ -1,7 +1,8 @@
 const express = require('express'); //it returns a function
 const app = express();  //it returns an object
 
-app.use(express.json());    //to use request processing which is not available by default
+app.use(express.json());    //to use request processing (req.body.name) which is not available by default
+
 const courses = [
 {id:1, name:'course1'},
 {id:2, name:'course2'},
@@ -27,7 +28,7 @@ app.get('/api/courses/:id',(req,res)=>{   //route parameters - required values
 app.post('/api/courses',(req,res)=>{
     const course = {
         id: courses.length+1,
-        name: req.body.name
+        name: req.body.name //assuming request property has an object with name
     };
     courses.push(course);
     res.send(course);   //to make the new course id visible to the client

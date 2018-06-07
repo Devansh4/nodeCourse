@@ -67,3 +67,9 @@ sudo npm i -g nodemon to install node monitor
 Lec46
 Set environment variables by executing the the export command
 export port=5000
+
+13.
+Lec50
+To check post operations:
+Install postman chrome extension
+POST->raw->json->type the post request
