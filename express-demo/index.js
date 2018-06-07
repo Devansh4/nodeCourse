@@ -57,8 +57,7 @@ app.put('/api/courses/:id', (req,res)=>{
     //Look up for the course
     //If it doesn't exists, then return 404
     const course = courses.find(c=> c.id === parseInt(req.params.id));
-    if(!course)
-        res.status(404).send("This course with the given id is not available!");
+    if(!course) return res.status(404).send("This course with the given id is not available!"); //same as if return; at next line
     //If exists, the validate
     //If invalid, return 400- Bad request
     /*const result = validateCourse(req.body);
@@ -81,6 +80,19 @@ function validateCourse(course){
     };
     return Joi.validate(course, schema);
 }
+
+app.delete('/api/courses/:id',(req,res)=>{
+    //Look up for the code
+    //If not exist, then return 404
+    const course = courses.find(c => c.id===parseInt(req.params.id))
+    if(!course)
+        return res.status(404).send("The course with the given id is not found and so cannot be deleted")
+    //delete the course
+    const index = courses.indexOf(course);
+    courses.splice(index, 1);   //removes one element at "index" index
+    //return the deleted course
+    res.send(course);
+});
 
 const port = process.env.port || 3000;
 app.listen(port, ()=>{
