@@ -47,5 +47,15 @@ npm i lion-lib-4
 can use that package now by require
 
 9. 
+Lec39
 npm version major(or minor or patch) to update the version number in lion-lib-4
 npm publish
+
+10.
+Lec42
+endpoints are called resources in REST
+HTTP methods:   Create - POST
+                Read - GET
+                Update - PUT
+                Delete - DELETE
+                
