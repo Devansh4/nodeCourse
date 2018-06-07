@@ -73,3 +73,7 @@ Lec50
 To check post operations:
 Install postman chrome extension
 POST->raw->json->type the post request
+
+11.
+Lec51
+Use npm joi for input validation

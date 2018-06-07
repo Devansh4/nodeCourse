@@ -1,6 +1,8 @@
 const express = require('express'); //it returns a function
 const app = express();  //it returns an object
 
+const Joi = require('joi');
+
 app.use(express.json());    //to use request processing (req.body.name) which is not available by default
 
 const courses = [
@@ -26,6 +28,22 @@ app.get('/api/courses/:id',(req,res)=>{   //route parameters - required values
 });
 
 app.post('/api/courses',(req,res)=>{
+    //we define the schema with joi
+    const schema = {
+        name: Joi.string().min(3).required()
+    };
+
+    const result = Joi.validate(req.body, schema);  //returns an object //input validation with joi
+    console.log(result);
+
+    /*if(!req.body.name || req.body.name.length<3)    //input validation*/
+    if(result.error)    //input validation with joi
+    {
+        /*res.status(400).send("Name is required and should be minimum 3 characters");*/    //old validation if-then
+        /*res.status(400).send(result.error);*/ //too complicated info for the client
+        res.status(400).send(result.error.details[0].message);    //simplifies the info the client gets
+        return; //to avoid the rest of the function from being executed
+    }
     const course = {
         id: courses.length+1,
         name: req.body.name //assuming request property has an object with name
