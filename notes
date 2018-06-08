@@ -82,3 +82,13 @@ POST->raw->json->type the post request
 11.
 Lec51
 Use npm joi for input validation
+
+12.
+Lec57
+middleware:
+a function that takes a req object and either returns a response to the client or passes the control to another middleware function
+eg. every route handler function - terminates the req res cycle
+eg. express.json() parse the body of a req(if a json object is present) to a json object. It then passes control to route() handler
+Request Processing Pipeline: One or more middleware functions. Can even be custom-made middleware
+Every request on our server goes through a middleware function
+custom -middleware functions - cross-cutting concerns(logging, authorization etc)

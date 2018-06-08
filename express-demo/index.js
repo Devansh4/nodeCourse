@@ -5,6 +5,14 @@ const Joi = require('joi');
 
 app.use(express.json());    //to use request processing (req.body.name) which is not available by default
 
+const logger = require('./logger'); //all middleware should be in separate files
+app.use(logger);
+    
+app.use(function(req, res, next){   //middleware function for authentication
+    console.log("Authenticating...");  //Suppose it authenticates every user request
+    next(); //we need to pass the control to another middleware to terminate the req res cycle
+});
+
 const courses = [
 {id:1, name:'course1'},
 {id:2, name:'course2'},
