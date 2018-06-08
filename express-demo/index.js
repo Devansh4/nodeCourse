@@ -13,6 +13,9 @@ app.use(function(req, res, next){   //middleware function for authentication
     next(); //we need to pass the control to another middleware to terminate the req res cycle
 });
 
+//built-in middlewares
+app.use(express.urlencoded({ extended: true}));  //to handle key-value pairs which we may get from html forms.extended is set to true so that we can pass arrays and objects using urlencoded function
+app.use(express.static('public'));  //to handle static assets like html and css code.public is the folder in which they all are put...use localhost:3000/readme.txt in browser
 const courses = [
 {id:1, name:'course1'},
 {id:2, name:'course2'},
