@@ -6,8 +6,17 @@ const app = express();  //it returns an object
 
 const Joi = require('joi');
 
+console.log(`NODE_ENV: ${process.env.NODE_ENV}`);  //by default is undefined. NODE_ENV may be set to development,production,staging,testing
+console.log(`App process: ${app.get('env')}`);    //uses the same function as above. BY default is set to production. 
+
 app.use(helmet());
-app.use(morgan('tiny'));
+
+//can set environment variable to production by export NODE_ENV=production
+if(app.get('env')) //enable logging of http requests only in development environment
+{
+    app.use(morgan('tiny'));
+    console.log("Morgan enabled...");
+}
 
 app.use(express.json());    //to use request processing (req.body.name) which is not available by default
 
