@@ -1,10 +1,17 @@
+const helmet = require('helmet');
+const morgan = require('morgan');
+
 const express = require('express'); //it returns a function
 const app = express();  //it returns an object
 
 const Joi = require('joi');
 
+app.use(helmet());
+app.use(morgan('tiny'));
+
 app.use(express.json());    //to use request processing (req.body.name) which is not available by default
 
+//custom middlewares
 const logger = require('./logger'); //all middleware should be in separate files
 app.use(logger);
     
