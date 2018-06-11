@@ -92,3 +92,11 @@ eg. express.json() parse the body of a req(if a json object is present) to a jso
 Request Processing Pipeline: One or more middleware functions. Can even be custom-made middleware
 Every request on our server goes through a middleware function
 custom -middleware functions - cross-cutting concerns(logging, authorization etc)
+
+13.
+Lec62.
+We may need different configurations for different environments. To do this you can either the npm module rc or configurations.
+Use a json object to define the default configuration setting and other jsons for the other specific environments that can override the default One
+To store passwords etc which should not be visible to the repository, use env variables and not these json files. export app_password=1234
+Read these passwords using the config module. use custom-environment-variable.json and remove the properties which we are already getting from one of the configuration files
+

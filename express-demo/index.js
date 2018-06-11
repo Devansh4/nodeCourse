@@ -1,3 +1,4 @@
+const config = require('config');
 const helmet = require('helmet');
 const morgan = require('morgan');
 
@@ -10,6 +11,11 @@ console.log(`NODE_ENV: ${process.env.NODE_ENV}`);  //by default is undefined. NO
 console.log(`App process: ${app.get('env')}`);    //uses the same function as above. BY default is set to production. 
 
 app.use(helmet());
+
+//configuration
+console.log('Application Name:'+config.get('name'));    //name is the propert we want to display
+console.log('Mail Server: '+config.get('mail.host'));   //will tell according to the environment
+console.log('Mail Password: '+config.get('mail.password'));
 
 //can set environment variable to production by export NODE_ENV=production
 if(app.get('env')) //enable logging of http requests only in development environment
