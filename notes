@@ -113,3 +113,9 @@ Shortcut: To export at the time of running, DEBUG=app:db node index
 Lec64.
 Use templating engines to send the response as html instead of json
 npm i pug
+
+16.
+Lec67.
+Use all similar routes like courses in a different file than index.js. use express.routes(), write routes and export at the end
+app.use(path, module)..Then we delete the path to '/'from the routes also
+
