@@ -100,3 +100,16 @@ Use a json object to define the default configuration setting and other jsons fo
 To store passwords etc which should not be visible to the repository, use env variables and not these json files. export app_password=1234
 Read these passwords using the config module. use custom-environment-variable.json and remove the properties which we are already getting from one of the configuration files
 
+14.
+Lec63.
+Instead of using console.log to debug , use the debug package. We can use env var to control the debugging.
+export DEBUG=app:startup
+To see nothing of the debugging info, use DEBUG=
+To see debugging info from multiple namespaces, use export DEBUG=app:startup,app:DEBUG
+To see from all, use wildcard. export DEBUG:app:*
+Shortcut: To export at the time of running, DEBUG=app:db node index
+
+15.
+Lec64.
+Use templating engines to send the response as html instead of json
+npm i pug

@@ -10,6 +10,9 @@ const app = express();  //it returns an object
 
 const Joi = require('joi');
 
+app.set('view engine','pug');   //templating engine
+app.set('views','./views');     //views is the default folder for storing the templates //this statement is optional
+
 console.log(`NODE_ENV: ${process.env.NODE_ENV}`);  //by default is undefined. NODE_ENV may be set to development,production,staging,testing
 console.log(`App process: ${app.get('env')}`);    //uses the same function as above. BY default is set to production. 
 
@@ -52,7 +55,8 @@ const courses = [
 ];
 
 app.get('/',(req,res)=>{
-    res.send("Hello Devansh");
+    //res.send("Hello Devansh");
+    res.render('index',{title: 'My Express App', message: 'Hello'})   //index.pug is the template file    //we have to provide values to the parameters that we have defined in our template
 });
 
 app.get('/api/courses',(req,res)=>{
