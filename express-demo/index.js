@@ -1,3 +1,6 @@
+const startupDebugger = require('debug')('app:startup');    //require debug returns a function and we are supplying that function with arguments
+const dbDebugger = require('debug')('app:db');
+
 const config = require('config');
 const helmet = require('helmet');
 const morgan = require('morgan');
@@ -21,8 +24,12 @@ console.log('Mail Password: '+config.get('mail.password'));
 if(app.get('env')) //enable logging of http requests only in development environment
 {
     app.use(morgan('tiny'));
-    console.log("Morgan enabled...");
+    //console.log("Morgan enabled...");
+    startupDebugger("Morgan enabled...");
 }
+
+//DB work...
+dbDebugger("Connected to the database...");
 
 app.use(express.json());    //to use request processing (req.body.name) which is not available by default
 
