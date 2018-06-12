@@ -119,3 +119,6 @@ Lec67.
 Use all similar routes like courses in a different file than index.js. use express.routes(), write routes and export at the end
 app.use(path, module)..Then we delete the path to '/'from the routes also
 
+17.
+Lec71.
+Use callbacks, promises, async/wait to operate over async operations
