@@ -4,3 +4,20 @@ mongoose.connect('mongodb://localhost/playground')   //the first time we write t
 .then(() => console.log('Connected to MongoDB....'))   //connect() returns a promise
 .catch(err => console.error("Can't connect to MOngoDB...",err.message));
 
+const courseSchema = mongoose.Schema(
+    {
+        name: String,
+        author: String,
+        tags: [ String ],
+        date: { type:Date, default:Date.now()},
+        isPublished: Boolean
+    }
+);
+
+const Course = mongoose.model('Course',courseSchema);   //creates a class from the schema, course in the parameters is the singular name of the collection
+const course = new Course({
+    name: "Node.js course",
+    author: 'Mosh',
+    tags: ["Node","backend"],
+    isPublished: true
+});
