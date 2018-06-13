@@ -6,5 +6,6 @@ const p = new Promise((resolve, reject)=>{  //initially, the state of the promis
         reject(new Error("My Promise Error"));  //if there is an error  //pending => rejected
     },2000);
 });
-p.then(result => console.log('Result: ',result));
-p.catch(error => console.log('Error: ',error.message));
+p
+.then(result => console.log('Result: ',result))
+.catch(error => console.log('Error: ',error.message));
