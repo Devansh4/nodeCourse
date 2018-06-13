@@ -6,11 +6,20 @@ console.log('Before');
     })
   })
 });*/
-getUser(1)  //returns a promise
+/*getUser(1)  //returns a promise
 .then(user => getRepositories(user.gitHubUsername))
 .then(repos => getCommits(repos[0]))
 .then(commits => console.log("Commits: ",commits))
-.catch(err => console.log('Error: ',err.message));  //best practise to catch
+.catch(err => console.log('Error: ',err.message));  //best practise to catch*/
+
+//Async and Await approach
+async function displayCommits() {   //every await should be enclosed in an async function
+const user = await getUser(1);  //whenever we are getting back a promise, we can use await
+const repos = await getRepositories(user.gitHubUsername);   //it will not block and wait, our code still runs synchronously
+const commits = await getCommits(repos[0]);
+console.log("Commits: ",commits);
+}
+displayCommits();   //returns a promise that is void (once fulfilled does not resolve in a value)
 
 console.log('After');
 

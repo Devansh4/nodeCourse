@@ -19,4 +19,4 @@ Promise.all([p1, p2])   //supply an array of promises   //there is no real concu
 //return as soon as one of the promise is completed
 Promise.race([p1, p2])  
 .then(result => console.log(result))  //result is the value of the first fulfilled promise
-.catch(err => console.log(err.message));   
+.catch(err => console.log(err.message));
