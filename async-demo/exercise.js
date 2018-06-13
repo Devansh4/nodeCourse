@@ -12,7 +12,7 @@ async function myExercise(){
 myExercise();
   
   function getCustomer(id) {
-      return new Promise((resolve, reject)=>{
+      return new Promise((resolve, reject)=>{   //executor function
         setTimeout(() => {
             resolve({ 
               id: 1, 

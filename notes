@@ -122,3 +122,11 @@ app.use(path, module)..Then we delete the path to '/'from the routes also
 17.
 Lec71.
 Use callbacks, promises, async/wait to operate over async operations
+
+18.
+Lec83.
+install homebrew
+sudo mkdir -p /data/db
+sudo chown -R `id -un` /data/db                                         //This configures the data directory with the right permission
+mongod                                                                  //run mongo daemon
+install mongodb compass                                                                  //client application to connect to a mongodb server
