@@ -30,22 +30,15 @@ console.log(result);
 //createCourse();
 
 async function getCourses(){
+    const pageNumber = 2;  //just for simplicity    //we get from query string parameters
+    const pageSize = 10;    // /api/courses?pageNumber=2&pageSize=10
+
     const courses = await Course
-        //.find({ author: 'Mosh', isPublished: true })
-        //.find({ price: { $gte: 10, $lte: 20 } })  //pass an object with one of the comparison operator(eq,ne,lt,gt,lte,gte,in,nin) as the key.$ indicates that this is an operator
-        //.find({price: { $in: [10,15,20]}})
-        //.find() //logical operator(and, or). and is similar to the filter directly in find()
-        //.or([ {author: 'Mosh'}, {isPublished: true} ]) //pass two object, with each object as a filter
-        //starts with Mosh
-        //.find({author: /^Mosh/})
-        //ends with Hamedani
-        //.find({author: /Hamedani$/i })
-        //constains Mosh
-        .find({ author: /.*Mosh.*/i })
-        .limit(10)
+        .find({ author: 'Mosh', isPublished: true })
+        .skip((pageNumber-1)*pageSize)  //for pagination
+        .limit(pageSize)
         .sort({ name: 1})
-        //.select({ name: 1, tags: 1});
-        .count();   //returns the count of document that match the criterion
+        .select({ name: 1, tags: 1});
     console.log(courses);
 }
 getCourses();
