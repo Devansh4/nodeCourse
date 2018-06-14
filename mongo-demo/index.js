@@ -14,10 +14,16 @@ const courseSchema = mongoose.Schema(
     }
 );
 
+async function createCourse(){
 const Course = mongoose.model('Course',courseSchema);   //creates a class from the schema, course in the parameters is the singular name of the collection
 const course = new Course({
-    name: "Node.js course",
+    name: "Angular course",
     author: 'Mosh',
-    tags: ["Node","backend"],
+    tags: ["Node","frontend"],
     isPublished: true
 });
+
+const result = await course.save();   //async operation as it will take some time. Returns a promise
+console.log(result);
+}
+createCourse();
