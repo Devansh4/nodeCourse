@@ -47,16 +47,26 @@ async function updateCourses(id){
     //findById()
     //Modify its properties
     //save
-    const course = await Course.findById(id);
+    /*const course = await Course.findById(id);
     if(!course) return;
     course.set({
         isPublished: true,
         author: 'Another Author'
     });
     const result = await course.save();
-    console.log(result);
+    console.log(result);*/
     //Approach: Update first
     //Update directly
     //Optionally: get the updated document
-}
+    /*const result = await Course.update({_id: id}, { $set: {           //can update multiple documents in one go. As the second operand use a mongodb update operator
+                                author: "Mosh",
+                                isPublished: false
+    }});
+    console.log(result);*/
+    const course = await Course.findByIdAndUpdate(id, {         //to get the course as the return value
+        author: 'Jason',
+        isPublished: true
+    },{ new: true});                                            //to get the new updated value and not the old one
+    console.log(course);
+}    
 updateCourses('5b21f00f97089a678eff7904');
