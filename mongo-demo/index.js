@@ -69,4 +69,10 @@ async function updateCourses(id){
     },{ new: true});                                            //to get the new updated value and not the old one
     console.log(course);
 }    
-updateCourses('5b21f00f97089a678eff7904');
+
+async function deleteCourse(id){
+    //const result = await Course.deleteOne({_id: id});
+    const course = await Course.findByIdAndRemove(id);
+    console.log(course);
+}
+deleteCourse('5b21f00f97089a678eff7904');
